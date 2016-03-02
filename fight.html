@@ -3,7 +3,7 @@
 <head>
 	<title></title>
 
-	<script type="js/fight.js"></script>
+	<script type="text/javascript" src="js/fight.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/fight.css">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -13,12 +13,12 @@
 <body>
 
 	<div class="btn-box">
-		<button class="btn">Funktionen</button>
-		<button class="btn">Vektoren</button>
-		<button class="btn">Textbeispiele</button>
+		<button class="btn" id="btn_funktionen">Funktionen</button>
+		<button class="btn" id="btn_vektoren">Vektoren</button>
+		<button class="btn" id="btn_textbsp">Textbeispiele</button>
 	</div>
 
-	<div class="mainbox" id="funktionen">
+	<div class="mainbox" id="tab_funktionen">
 
 		<div class="row">
 
@@ -28,45 +28,7 @@
 
 			<div class="box textbox">
 			  <div>
-			  	<h1>Pythagoras</h1>
-				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-			  </div>
-			</div>
-
-		</div>
-
-		<div class="row">
-
-			<div class="box imagebox">
-				<img src="images/Konfuzius.jpg" class="mathematic"/>
-			</div>
-
-			<div class="box textbox">
-			  <div>
-			  	<h1>Pythaschmoras</h1>
-				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-			  </div>
-			</div>
-
-		</div>
-
-	</div>
-
-
-
-	
-
-	<div class="mainbox" id="vektoren">
-
-		<div class="row">
-
-			<div class="box imagebox">
-				<img src="images/Pythagoras.jpg" class="mathematic"/>
-			</div>
-
-			<div class="box textbox">
-			  <div>
-			  	<h1>Pythagoras</h1>
+			  	<h1>Funktionen</h1>
 				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 			  </div>
 			</div>
@@ -94,7 +56,7 @@
 
 
 
-	<div class="mainbox" id="textbsp">
+	<div class="mainbox" id="tab_vektoren">
 
 		<div class="row">
 
@@ -104,7 +66,45 @@
 
 			<div class="box textbox">
 			  <div>
-			  	<h1>Pythagoras</h1>
+			  	<h1>Vektoren</h1>
+				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+			  </div>
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="box imagebox">
+				<img src="images/Konfuzius.jpg" class="mathematic"/>
+			</div>
+
+			<div class="box textbox">
+			  <div>
+			  	<h1>Pythaschmoras</h1>
+				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+			  </div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+
+
+	<div class="mainbox" id="tab_textbsp">
+
+		<div class="row">
+
+			<div class="box imagebox">
+				<img src="images/Pythagoras.jpg" class="mathematic"/>
+			</div>
+
+			<div class="box textbox">
+			  <div>
+			  	<h1>Textbeispiele</h1>
 				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 			  </div>
 			</div>

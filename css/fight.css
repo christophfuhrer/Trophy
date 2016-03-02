@@ -54,6 +54,5 @@
     background-color: #446CB3;
 }
 
-body{
-	padding-top:20px;
-}
+#tab_vektoren{display:none;}
+#tab_textbsp{display:none;}
