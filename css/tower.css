@@ -1,5 +1,5 @@
 .box{
-	text-align: center;
+	text-align: left;
 }
 
 .mainbox{
@@ -25,6 +25,7 @@
 }
 
 .textbox{
+	padding:0px 35px;
 	display: flex;
 	flex-grow: 2;
 	align-items: center;
