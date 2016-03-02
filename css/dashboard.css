@@ -52,22 +52,14 @@ li a:hover {
 #right{
 	width: 80%;
 	border: 1px solid #aaa;
-	padding: 3em;
+	padding: 10px 3em;
 	overflow-y: auto;
 }
 
-#content_tower{
-	display: none;
-}
+#content_tower{display: none;}
 
-#content_fight{
-	display: block;
-}
+#content_fight{display: block;}
 
-#content_training{
-	display: none;
-}
+#content_training{display: none;}
 
-#content_trophies{
-	display: none;
-}
+#content_trophies{display: none;}
