@@ -1,0 +1,59 @@
+.box{
+	text-align: left;
+}
+
+.mainbox{
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.mathematic{
+	width: 200px;
+}
+
+.row{
+	display: flex;
+	margin-bottom: 25px;
+	border: 1px solid #ccc;
+	background-color: #f0f0f0;
+}
+
+.imagebox{
+	display: flex;
+	flex-grow: 1;
+	align-items: center;
+}
+
+.textbox{
+	padding:0px 35px;
+	display: flex;
+	flex-grow: 2;
+	align-items: center;
+}
+
+.mainbox{
+	padding: 50px 50px;
+}
+
+.btn-box{
+	display: flex;
+	justify-content: center;
+}
+
+.btn{
+	width:200px;
+	height:50px;
+	margin-right:25px;
+	background-color: #1F3A93;
+	color: #fff;
+	border: 1px solid #999;
+	border-radius:5px;
+}
+
+.btn:hover {
+    background-color: #446CB3;
+}
+
+body{
+	padding-top:20px;
+}
