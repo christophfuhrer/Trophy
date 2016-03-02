@@ -1,0 +1,30 @@
+.box{
+	text-align: center;
+}
+
+.mainbox{
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.mathematic{
+	padding-top: 4px;
+}
+
+.row{
+	display: flex;
+	margin-bottom: 25px;
+	border: 1px solid #ccc;
+	background-color: #f0f0f0;
+}
+
+.imagebox{
+	flex-grow: 1;
+}
+
+.textbox{
+	flex-grow: 2;
+
+	display: flex;
+	align-items: center;
+}
