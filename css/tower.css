@@ -1,5 +1,5 @@
 .box{
-	text-align: center;
+	text-align: left;
 }
 
 .mainbox{
@@ -8,7 +8,7 @@
 }
 
 .mathematic{
-	padding-top: 4px;
+	width: 200px;
 }
 
 .row{
@@ -19,12 +19,14 @@
 }
 
 .imagebox{
+	display: flex;
 	flex-grow: 1;
+	align-items: center;
 }
 
 .textbox{
-	flex-grow: 2;
+	padding:0px 35px;
 	display: flex;
+	flex-grow: 2;
 	align-items: center;
-	text-align: left;
 }
