@@ -17,5 +17,5 @@ function getPointsInt(inter){
 
 window.onload = function(){
 	setPoints(6);
-	getPointsInt(5000);
+	getPointsInt(2000);
 }
