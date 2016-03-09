@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Createjs</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.createjs.com/easeljs-0.8.1.min.js"></script>
+    <script src="stage.js"></script>
+    <script src="skater.js"></script>
+    <script src="drawfunction.js"></script>
+    <script type="text/javascript">
+        var stage =new createjs.Stage("myCanvas");
+
+        function startGame() {
+            createjs.Ticker.setFPS(60);
+            createjs.Ticker.addEventListener("tick", function (e) {
+                stage.update();
+            });
+        }
+
+    </script>
+
+    <style type="text/css">
+
+        canvas{
+          border:1px solid #2ecc71;
+      }
+
+      #header{
+        position:absolute;
+        left:780px;
+        top:40px;
+        font-size:26px;
+        font-weight: bold;
+        font-family: Montserrat;
+    }
+
+    .super{
+    	vertical-align:super;
+    	font-size:85%;
+    }
+
+    .mainbox{
+        position: absolute;
+        left:2.5%;
+        top:10px;
+    }
+
+    .btn-success{
+        margin-right:15px;
+    }
+
+    .btn-primary{
+        margin-right:5px;
+        padding: 5px 12px;
+    }
+
+</style>
+</head>
+<body onload="Main()">
+<div class="mainbox">
+
+    <span id="header">FUNKTIONS-TEST</span>
+    <figure id="fig1">
+        <canvas id="myCanvas" width="1800px" height="900px">
+        </canvas>
+        <div class="container text-center">
+            <button class="clear btn btn-warning" id="clear">Clear Functions</button>
+            <button class="newfuncz btn btn-success" id="newfuncz">New Functions</button>
+        </div>
+    </figure>
+    </div>
+</body>
+</html>

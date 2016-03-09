@@ -1,0 +1,12 @@
+<p>Willkommen in meiner Welt, Fremder</p>
+
+<p>Ich bin Leonard Euler, Begründer der Analysis, Namensstifter der eulerschen Zahl und der eulerschen Formel und vieles mehr. Ein Großteil der mathematischen Symbolik, die heute noch benutzt wird, stammt von mir. Grundsätzlich wärt ihr ohne mich komplett im Eck.</p>
+
+<p>Ich habe in meiner Lebenszeit über 800 Publikationen veröffentlicht, was selbst für einen hauptberuflichen Mathematiker sehr produktiv ist. Doch ich war auch als Physiker aktiv, so habe ich unter Anderem die Hydrodynamik revolutioniert. Die Stabilitätstheorie geht ebenfalls auf mich zurück!</p>
+
+<p>Versuch das mal zu überbieten!</p>
+
+<!-- Bei einer Niederlage -->
+
+<p>Aber... wie?!! Wie konnte ich besiegt werden?</p>
+<p>Geht mir nun aus dem Licht, ich habe keine Zeit mehr für diesen Unfug!</p>
