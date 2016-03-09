@@ -1,0 +1,63 @@
+div.content {
+  background-image: url(http://i.imgur.com/aQBNT8l.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(http://i.imgur.com/aQBNT8l.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 44px;
+  padding-top: 36px;
+  width: 1000px;
+  height: 500px;
+}
+
+#btn-container {
+  position: absolute;
+  top: 50px;
+  left: 850px;
+}
+
+button {
+  display: block;
+  margin-bottom: 15px;
+  height: 40px;
+  width: 165px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+div#start,
+div#end {
+  position: absolute;
+  text-align: center;
+  top: 18px;
+  width: 50px;
+  height: 20px;
+  background-color: #ccc;
+  border: 3px solid #333;
+  border-radius: 5px;
+}
+
+div#start {
+  left: 115px;
+}
+
+div#end {
+  left:670px;
+}
+
+button:nth-child(4) {
+  margin-top: -10px;
+}
+
+button:nth-child(6) {
+  margin-top: -6px;
+}
+
+button:nth-child(7) {
+  margin-top: -10px;
+}
+
