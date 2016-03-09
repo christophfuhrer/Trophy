@@ -24,7 +24,7 @@ Um dich zu besiegen verwende ich mein eigenes Eliminationsverfahren.',
 		'epilog_text: 'Oh nein du hast mich besiegt! das heißt wohl das du keine lineare Gleichung bist. Ich habe dich unterschätzt. ich werde meine mathematischen Kollegen warnen, damit sie dich aufhalten können.',
 	},
 	{
-		'name':'Leibniz',
+		'name':'Gottfried Wilhelm Leibniz',
 		'required_points':'xx',
 		'bild': 'pfad/leibniz.jpg',
 		'trophy': 'pfad/trp/gauss_trophy.svg',
@@ -50,7 +50,7 @@ Ich nehme jede Herausforderung an, in der Hoffnung, dass einer von euch mich üb
 Gesinnt euch wohl!',
 	},
 	{
-		'name':'Euler',
+		'name':'Leonard Euler',
 		'required_points':'xx',
 		'bild': 'pfad/euler.jpg',
 		'trophy':'pfad/trp/euler_trophy.svg',
@@ -75,7 +75,7 @@ Die meisten Leute schaffen es nicht einmal die mathematischen Grundsätze, die i
 	},
 	{
 		'name': 'Günther Kauer & Stephan Javurek'
-		'required_points':'xx',
+		'required_points': 'xx',
 		'bild':'pfad/kauer_javurek.jpg',
 		'trophy':'pfad/trp/kauer_javurek.svg',
 		'prolog_text': 'K: "Vor dir steht das Dreamteam der Mathematik: Günther Kauer & Stephan Javurek. Ich bin das Alpha..."
