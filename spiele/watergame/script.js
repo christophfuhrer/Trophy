@@ -75,6 +75,8 @@
         }
         if (this.getAttribute("data-check") === "richtig") {
           alert("Richtig!");
+            var cur = window.localStorage.getItem('CurPoints');
+            window.localStorage.setItem('CurPoints', parseInt(cur) + 1);
           document.getElementById("next").style.display = 'block';
         }
       };

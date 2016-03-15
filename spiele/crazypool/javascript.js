@@ -104,11 +104,14 @@ var win = function() {
 
   if(compareVector(addVector(initVector, answerVector), correctVector)) {
     var txt_sieg = new createjs.Text("Sieg!", "40px Arial", "#ff7700");
+       var cur = window.localStorage.getItem('CurPoints');
+    window.localStorage.setItem('CurPoints', parseInt(cur) + 1);
     txt_sieg.x = 400;
     txt_sieg.y = 280;
     stage.addChild(txt_sieg);
   } else {
     var txt_niederlage = new createjs.Text("Niederlage!", "40px Arial", "#ff7700");
+   
     txt_niederlage.x = 400;
     txt_niederlage.y = 280;
     stage.addChild(txt_niederlage);

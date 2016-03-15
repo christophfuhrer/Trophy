@@ -221,6 +221,8 @@ var make_game = function (root, container) {
                         }
                         game.streak += 1;
                         video.play(videos.game.hit, callback);
+                         var cur = window.localStorage.getItem('CurPoints');
+                        window.localStorage.setItem('CurPoints', parseInt(cur) + 1);
                     } else {
                         if (game.streak > 0) {
                             game.streak = 0;
