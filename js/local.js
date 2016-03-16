@@ -16,8 +16,3 @@ function getPointsInt(inter){
 		console.log("Aktuelle Punkte: " + cur);
 	}, inter);
 }
-
-window.onload = function(){
-	setPoints(6);
-	getPointsInt(2000);
-}
