@@ -12,12 +12,15 @@ function getPointsInt(inter){
 	setInterval(function(){ 
 		var cur = window.localStorage.getItem('CurPoints');
 		var a = document.getElementById("points");
-		a.textContent = "Punktestand: "+cur;
 		console.log("Aktuelle Punkte: " + cur);
+		ueberpruefen(cur);
 	}, inter);
 }
 
-window.onload = function(){
-	setPoints(6);
-	getPointsInt(2000);
+function ueberpruefen(cp) {
+	console.log(el.clientHeight);
+	el.setAttribute("style", "height:" + height * cp + "px ; top:" + (800 - height * cp) + "px");
+
+
+
 }
