@@ -12,9 +12,7 @@ function getPointsInt(inter){
 	setInterval(function(){ 
 		var cur = window.localStorage.getItem('CurPoints');
 		var a = document.getElementById("points");
-		a.textContent = "Punktestand: "+cur;
 		console.log("Aktuelle Punkte: " + cur);
-		
 		outputTrophies(1);
 	}, inter);
 }
@@ -26,5 +24,18 @@ function outputTrophies(points){
 		var x = document.getElementsByClassName("trophy");
 		x[i].src = links[i];
 	}
+
+}
+		ueberpruefen(cur);
+	}, inter);
+
+}
+
+function ueberpruefen(cp) {
+	console.log(el.clientHeight);
+	el.setAttribute("style", "height:" + height * cp + "px ; top:" + (800 - height * cp) + "px");
+
+
+
 
 }
