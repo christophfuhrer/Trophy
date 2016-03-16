@@ -1,0 +1,16 @@
+<p>Grüße, Suchender!</p>
+
+<p>Mein Name ist <i>Leonardo da Pisa</i>, oder auch <b>Fibonacci</b>, wie mich die Untertanen nennen! Noch heute kann man meine Statue im Campo Santo in Pisa begutachten.</p>
+<p>
+Im Jahre <b>1202</b> erfand ich die Fibonacci-Folge, um das exponentielle Wachstum von Kaninchen den niederbemittelten darzustellen. Diese Erfindung war so genial, dass noch heute in eurem "Mathematik"-Unterricht versucht wird, sie zu ergründen.
+</p>
+<p>
+Ich nehme jede Herausforderung an, in der Hoffnung, dass einer von euch mich übertrumpfen kann. Jedoch habe ich wenig Glauben daran, ein solche Vorkommnis noch zu erleben.
+</p>
+
+<!-- Bei einer Niederlage -->
+
+<p>
+Ich ziehe meine Kapuze vor euch, ehrenwerter Mathematiker und Philosoph. Ihr habt meine Leidenschaft für die Mathematik wieder erweckt und meine Hoffnungen für die Zukunft neu entfacht.
+</p>
+<p>Gesinnt euch wohl!</p>

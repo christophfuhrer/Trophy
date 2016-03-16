@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Textbeispiel</title>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<script src="https://code.createjs.com/easeljs-0.8.1.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+
+	<style type="text/css">
+		body{
+			background-color: #555;
+		}
+		.main {	
+			padding: 50px;
+			color: #fff;
+		}
+		#exercise-box {
+			border: 4px solid #4183D7; 
+			border-radius: 10px;
+			padding: 30px;
+			-webkit-box-shadow: -8px 13px 30px 0px rgba(0,0,0,0.75);
+			-moz-box-shadow: -8px 13px 30px 0px rgba(0,0,0,0.75);
+			box-shadow: -8px 13px 30px 0px rgba(0,0,0,0.75);
+		}
+		#correct {
+			border: 4px solid #00B16A;
+			border-radius: 10px;
+			padding: 30px;
+			margin-bottom: 50px;
+			-webkit-box-shadow: 0px 13px 30px 0px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 13px 30px 0px rgba(0,0,0,0.75);
+			box-shadow: 0px 13px 30px 0px rgba(0,0,0,0.75);
+		}
+		#false {
+			border: 4px solid #F22613;
+			border-radius: 10px;
+			padding: 30px;
+			-webkit-box-shadow: 0px 13px 30px 0px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 13px 30px 0px rgba(0,0,0,0.75);
+			box-shadow: 0px 13px 30px 0px rgba(0,0,0,0.75);
+		}
+		.margin-top {
+			margin-top: 30px;
+		}
+		#exercise-box span:hover{
+			color: #F4D03F;
+		}
+	</style>
+
+	<script>
+		$(document).ready(function() {
+			var errors = 0;
+			var curlev = 3;
+			var bew = ["Das war perfekt weiter so!","Das war schon sehr gut! Übe noch ein bisschen und du wirst zum Meister.","Das war okay aber du musst auf alle Fälle noch üben.","Das war leider nicht so gut, probiere es mal auf der leichteren Stufe."];
+			var angabepunkte = [
+			{id:1, desc: "Du hast dich nach deiner 13-jährigen technischen Schullaufbahn entschlossen, der IT-Welt den Rücken zu kehren und eine Baumzucht-Firma zu gründen. Nach weiteren 8 Jahren harten Studiums der Zuchtvorgänge und Genmanipulation entschließt du dich, endlich mit der aktiven Zucht zu beginnen und suchst eine Bank für einen Kredit auf. Dieser beläuft sich auf 122.000 € und zusammen mit deinen Privateinlagen steht dir somit ein Gesamtkapital von 155.000 € zur Verfügung.", status: false, level: [3]},
+			{id:2, desc: "Du hast dich nach deiner 13-jährigen technischen Schullaufbahn entschlossen eine Baumzucht-Firma zu gründen. Nach genauen Nachforschungen erstellst du einen Business Plan und beginnst dein Unternehmen zu führen.", status: false, level: [2]},
+			{id:3, desc: "Du hast dich entschlossen eine Baumzucht-Firma zu gründen.", status: false, level: [1]},
+			{id:4, desc: " Um drei Viertel dieses Geldes kaufst du dir 3 ha Grünland und 55 der feinsten Saatlinge, die auf dem Markt zu finden sind. Den Rest des Geldes investierst du in Marketingmaßnahmen und in deine firmeneigene Toilette.", status: false, level: [3]},
+			{id:5, desc: " Um drei Viertel dieses Geldes kaufst du dir 3 ha Grünland und 55 der feinsten Saatlinge, die auf dem Markt zu finden sind.", status: false, level: [2]},
+			{id:6, desc: "Im ersten Jahr schaffst du es, 35 Bäume zu pflanzen, was für dich und deine Firma einen großen Erfolg bedeutet.", status: true, level: [1,2, 3]},
+			{id:7, desc: "  Du entschließt dich zu expandieren, schaffst dadurch 20.000 Arbeitsplätze und kannst deine Firma nun Weltmarktführer im Bereich „Unnötige-Firmen-die-niemand-braucht-aber-alle-mögen“ nennen. So erreichst du auch dein Businessplan-Ziel von einem Jahresumsatz von 35 Milliarden Euro und ", status: false, level: [3]},
+			{id:8, desc: "  Du entschließt dich zu expandieren, schaffst dadurch 20.000 Arbeitsplätze und erreichst so auch deine Businessplan-Ziele und ", status: false, level: [2]},
+			{id:9, desc: "  Du schaffst es in Folge ein konstantes jährliches Wachstum von 6% zu erreichen.", status: true, level: [1]},
+		 	{id:10, desc: "erzielst ein konstantes Jahreswachstum von 6%.", status: true, level: [2, 3]},
+		 	{id:11, desc: " Wie viele Bäume wirst du daher in 12 Jahren gepflanzt haben?", status: true, level: [1, 2, 3]}
+			]
+			function start(){
+			$('#correct').html("<h4><b>Richtig:</b></h4><ul id='ul-correct'></ul>");
+			$('#false').html("<h4><b>Falsch:</b></h4><ul id='ul-false'></ul>");
+			$('#exercise-box').html("");
+			$('#erer').html("Du hast "+ errors +" Fehler gemacht!");
+			var erg ="";
+			function gen(){
+	 		for(var i = 0; i < angabepunkte.length; i++) {
+	 			if(angabepunkte[i].level[0]===curlev || angabepunkte[i].level[1]===curlev || angabepunkte[i].level[2]===curlev){
+	 			erg += "<span status='"+angabepunkte[i].status+"'>" + angabepunkte[i].desc + "</span>";
+	 			}
+	 		}
+	 		}
+	 		gen();
+	 		$('#exercise-box').html("<h4><b>Angabe:</b></h4>" + erg);
+
+			$('[status~=true]').click(function() {
+			 	$('#correct').append($(this)).append("<br /><br />");
+			 	var kids = $('#exercise-box').children('span[status~=true]');
+			 	console.log(kids);
+			 	if(kids.length === 0){
+					if(errors==0){
+						$('#erer').html("Du hast "+ errors +" Fehler gemacht!");
+			 			$('#erg').html(bew[errors]);
+			 			$('#wr').html("");
+			 			$('#myModal').modal({});
+					}else{
+						$('#erer').html("Du hast "+ errors +" Fehler gemacht!:");
+			 			$('#erg').html(bew[errors]);
+			 			$('#myModal').modal({});
+					}
+			 		
+			 	}
+			});
+			$('[status~=false]').click(function() {
+				errors++;
+			 	$('#false').append($(this)).append("<br /><br />");
+			 	$('#ermade').append("<li>").append($(this).text()).append("</li>");
+			 	$('.error').text("Anzahl deiner Fehler: "+errors);
+			});
+
+			$('#restart').click(function() {
+				errors = 0;
+				$('.error').text("Anzahl deiner Fehler: "+errors);
+				start();
+			});
+			$('#easy').click(function() {
+				if(curlev>1){
+					curlev-=1;
+					errors = 0;
+					$('.error').text("Anzahl deiner Fehler: "+errors);
+					start();
+					
+
+				}else{
+					curlev=1;
+					errors = 0;
+					$('.error').text("Anzahl deiner Fehler: "+errors);
+					start();				
+				}
+			});
+			}
+			start();
+		});		 
+    </script>
+</head>
+
+<body>
+	<div class="container main">
+		<div class="row">
+			<div class="col-lg-12">
+				<h3>Textbeispiel</h3>
+				<h4>Drücke in folgendem Wachstums-Textbeispiel auf die für dich Wichtigsten Angabepunkte, die zur Berechnung benötigt werden.</h4>
+			</div>
+		</div>
+		<div class="row margin-top">
+			<div class="col-sm-6" id="exercise-box">
+
+			</div>
+			<div class="col-sm-6" id="solution-box">
+				<div class="col-sm-12" id="correct">
+					
+				</div>
+				<div class="col-sm-12" id="false">
+
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-offset-3 col-sm-6 center margin-top" style="text-align: center;"><h3 class="error">Anzahl deiner Fehler: 0</h3></div>
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="color:black;">
+  			<div class="modal-dialog" role="document">
+    			<div class="modal-content">
+      				<div class="modal-header">
+        				<!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+        				<h4 class="modal-title" id="myModalLabel">Dein Ergebnis:</h4>
+      				</div>
+      				<div class="modal-body">
+        				<span id="erg"></span>
+        				<h5 id="erer"></h5>
+        				<span id="wr">
+        				</span>
+        				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Deine Fehler
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        Folgende Zeilen hast du fälschlicher Weise ausgewählt:<br>
+        <ul id="ermade">
+        	
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Erklärung
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <p>Dein Fehler war, dass du leider Elemente der Angabe, welche du nicht zur Berechnung benötigst, ausgewählt hast. Heutige Angaben sind, sowie diese, meistens unnötig aufgepauscht um Schüler zu irritieren oder mit zu viel Information zu überfordern. Bei deinem nächsten Versuch gib Acht darauf welche Angaben du wirklich benötigst um das Ergebnis zu berechnen. Im Falle eines Wachstums-Beispiels sind das:
+        					<ul>
+        					<li>Der Ausgangswert <i>N(0)</i></li>
+        					<li>Die jährliche Veränderung (Wachstum/Zerfall) <i>q</i></li>
+        					<li>Die Dauer <i>t</i> über die die Veränderung stattfindet</li>
+        					</ul>
+        					Sollte dir das Beispiel einfach zu schwer gewesen sein, versuch es einfach beim nächsten Mal auf einem niedrigeren Level.</p>
+      </div>
+    </div>
+  </div>
+</div>
+      				</div>
+      				<div class="modal-footer">
+        				<button type="button" id="restart" class="btn btn-default" data-dismiss="modal">Neustart</button>
+        				<button type="button" id="easy" class="btn btn-primary" data-dismiss="modal">Level vereinfachen</button>
+      				</div>
+    			</div>
+  			</div>
+		</div>
+	</div>
+</body>
+</html>

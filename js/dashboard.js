@@ -37,4 +37,11 @@ window.onload = function() {
  
     document.getElementById(x).style.display = "block";
   }
+
+  /* 
+  /   Navigation im Fight zwischen Funktionen, Vektoren und Textbeispielen
+  */
+  setPoints(6);
+  getPointsInt(2000);
+
 };

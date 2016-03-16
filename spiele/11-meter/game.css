@@ -1,0 +1,40 @@
+.vector-input {
+    position: absolute;
+    right: -6%;
+    bottom: 8%;
+
+    border: none;
+    text-align: center;
+}
+
+span.vector-input {
+    font-size: 4em;
+    margin-right: -0.325em;
+    margin-bottom: -0.5em;
+    z-index: 9;
+}
+
+input.vector-input {
+    width: 2em;
+    z-index: 10;
+    -moz-appearance: textfield;
+}
+input.vector-input::-webkit-outer-spin-button,
+input.vector-input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input.vector-input.x {
+    margin-bottom: 1em;
+}
+input.vector-input.y {
+    margin-bottom: -1em;
+}
+
+video {
+	width: 1024px;
+	position: absolute;
+	top: 0;
+}

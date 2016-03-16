@@ -1,6 +1,0 @@
-<p>Grüß Gott, Reisender!</p>
-<p>Gottfried Wilhelm Leibniz mein Name, zu meinen Werken zählen eine revolutionäre Rechenmaschine, die Einführung des Binärsystems, womit ich den Grundstein für die moderne Computertechnologie gelegt habe, die Infinitesimalrechnung, den Beweis für einen Gott und viele mehr. Meine mathematischen Arbeiten haben auch viele praktische Anwendungen, unter Anderem Pläne für das Uboot, eine Maschine zur Bestimmung der Windgeschwindigkeit und Anwendung im Bergbau. Mein Werk ist jedoch nicht auf die Mathematik beschränkt, in den Bereichen Logik, Philosophie, Linguistik und Rechtswesen. Ein Plebejer wie du kann mich niemals besiegen!<p>
-
-<!-- Nach der Niederlage -->
-
-<p>Was?!! Wie konnte ein so gewöhnlicher Bürger mich in meinem eigenen Element schlagen? Geh jetzt bitte, ich muss wohl meinen Gottesbeweis noch einmal überarbeiten.</p>

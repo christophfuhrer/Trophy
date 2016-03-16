@@ -15,11 +15,13 @@ function getPointsInt(inter){
 		console.log("Aktuelle Punkte: " + cur);
 		ueberpruefen(cur);
 	}, inter);
+
 }
 
 function ueberpruefen(cp) {
 	console.log(el.clientHeight);
 	el.setAttribute("style", "height:" + height * cp + "px ; top:" + (800 - height * cp) + "px");
+
 
 
 
