@@ -42,5 +42,4 @@ window.onload = function() {
   */
   setPoints(6);
   getPointsInt(2000);
-
-};
+}
