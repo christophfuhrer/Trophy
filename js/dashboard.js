@@ -8,6 +8,7 @@ window.onload = function() {
 	document.getElementById('nav_training').addEventListener("click", clickNavLink);
 	document.getElementById('nav_trophies').addEventListener("click", clickNavLink);
 
+
   function clickNavLink(){
   	var x = this.getAttribute("id").replace("nav", "content");
   	var allContent = document.querySelectorAll("div[id^='content_']");
@@ -42,4 +43,8 @@ window.onload = function() {
   */
   setPoints(6);
   getPointsInt(2000);
+<<<<<<< HEAD
 }
+=======
+};
+>>>>>>> a471dc369a96ed63e07995cbf2b43c465190552b

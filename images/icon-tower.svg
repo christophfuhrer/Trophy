@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="25px" height="75px" viewBox="0 0 25 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>tower</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="tower" transform="translate(0.000000, 1.000000)" stroke="#979797" fill="#D8D8D8">
+            <path d="M8.53658537,0 L16.4634146,0 L16.4634146,12.7377049 L8.53658537,12.7377049 L8.53658537,0 Z" id="Path-7"></path>
+            <rect id="Rectangle-1" x="3.04878049" y="12.1311475" width="18.2926829" height="26.0819672"></rect>
+            <rect id="Rectangle-1" x="1.82926829" y="37.6065574" width="20.7317073" height="26.0819672"></rect>
+            <polygon id="Triangle-1" points="12.195122 55.1967213 21.9512195 63.0819672 2.43902439 63.0819672 "></polygon>
+            <rect id="Rectangle-3" x="1.82926829" y="63.0819672" width="3.04878049" height="9.70491803"></rect>
+            <rect id="Rectangle-3" x="6.09756098" y="63.0819672" width="3.04878049" height="9.70491803"></rect>
+            <rect id="Rectangle-3" x="19.5121951" y="63.0819672" width="3.04878049" height="9.70491803"></rect>
+            <rect id="Rectangle-3" x="15.2439024" y="63.0819672" width="3.04878049" height="9.70491803"></rect>
+            <rect id="Rectangle-3" x="10.9756098" y="63.0819672" width="3.04878049" height="9.70491803"></rect>
+            <rect id="Rectangle-8" x="0" y="72.1803279" width="25" height="1.81967213"></rect>
+        </g>
+    </g>
+</svg>
