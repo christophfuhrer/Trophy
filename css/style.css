@@ -1,0 +1,162 @@
+body{
+	font-family: Raleway;
+}
+.navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1F3A93;
+    border-bottom: 1px solid #aaa;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-size: 12px;
+}
+
+.navbar-list li {
+    float: left;
+}
+
+.navbar-list li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 15px 3rem;
+    text-decoration: none;
+    border-right: 1px solid #aaa;
+}
+
+li a:hover {
+    background-color: #446CB3;
+}
+
+#content{
+	position: absolute;
+	top: 3rem;
+	bottom: 0px;
+	width: 100%;
+	padding: 3rem;
+	display: flex;
+	align-items: stretch;
+	box-sizing: border-box;
+}
+
+#left{
+	width: 20%;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	justify-content: center;
+    background-image: url("../images/turm.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#right{
+	width: 80%;
+	border: 1px solid #aaa;
+	padding: 10px 3em;
+	overflow-y: auto;
+}
+
+#content_tower{display: none;}
+
+#content_fight{display: block;}
+
+#content_training{display: none;}
+
+#content_trophies{display: none;}
+
+#rectpartie{
+    position:absolute;
+    z-index: -1;
+    margin-left:60px;
+    top:700px;
+    height:100px;
+    width:220px;
+    background-color: lightgreen;
+    transition: 2s ease-in-out;
+}
+
+.box{
+    text-align: left;
+}
+
+.mathematic{
+    width: 200px;
+    padding-left: 30px;
+}
+
+.row{
+    display: flex;
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+}
+
+.rowt{
+    display: flex;
+    margin-bottom: 15px;
+    background-color: #fff;
+}
+
+.imagebox{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    min-width: 560px;
+}
+
+.textbox{
+    padding:0px 35px;
+    display: flex;
+    flex-grow: 2;
+    align-items: center;
+}
+
+.mainbox{
+    padding: 50px 0px;
+}
+
+.btn-box{
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    width:200px;
+    height:50px;
+    margin-right:25px;
+    background-color: #1F3A93;
+    color: #fff;
+    border: 1px solid #999;
+    border-radius:5px;
+}
+
+.btn:hover {
+    background-color: #446CB3;
+}
+
+#tab_vektoren{display:none;}
+#tab_textbsp{display:none;}
+
+shelf{
+    width: 90%;
+    height: 90%;
+    margin: 0px auto;
+    border: 3px solid brown;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+.full{
+    width: 100%;
+    height: 100%;
+}
+.third{
+    width: 33.33%;
+    margin: 0px auto;
+}
+.trophy{
+    width: 220px;
+}
