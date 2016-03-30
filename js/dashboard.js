@@ -8,6 +8,7 @@ window.onload = function() {
 	document.getElementById('nav_training').addEventListener("click", clickNavLink);
 	document.getElementById('nav_trophies').addEventListener("click", clickNavLink);
 
+
   function clickNavLink(){
   	var x = this.getAttribute("id").replace("nav", "content");
   	var allContent = document.querySelectorAll("div[id^='content_']");
@@ -40,7 +41,47 @@ window.onload = function() {
   /* 
   /   Navigation im Fight zwischen Funktionen, Vektoren und Textbeispielen
   */
-  setPoints(6);
+  function setPoints(poi){
+    window.localStorage.setItem('CurPoints', poi);
+  }
+
+  function getPoints(){
+    var cur = window.localStorage.getItem('CurPoints');
+    alert("Neuer Durchgang");
+  }
+
+  function getPointsInt(inter){
+    setInterval(function(){ 
+      var cur = window.localStorage.getItem('CurPoints');
+      var a = document.getElementById("points");
+      outputTrophies(1);
+      ueberpruefen(cur);
+    }, inter);
+  }
+
+  function outputTrophies(points){
+    var links = ["./images/trophies/gauss_trophy.svg", "./images/trophies/leibniz_trophy.svg", "./images/trophies/pythagoras_trophy.svg", "./images/trophies/qmark.png", "./images/trophies/qmark.png", "./images/trophies/qmark.png"];
+    for (var i = 0; i < points; i++) {
+      var x = document.getElementsByClassName("trophy");
+      x[i].src = links[i];
+    }
+
+  }
+
+  function ueberpruefen(cp) {
+    el.setAttribute("style", "height:" + height * cp + "px ; top:" + (600 - height * cp) + "px");
+
+  }
+
   getPointsInt(2000);
+
+
+
+  /* 
+  /   Tower wachsen lassen.
+  */
+  el = document.getElementById("rectpartie");
+    height = el.clientHeight;
+
 
 };
