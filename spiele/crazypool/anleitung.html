@@ -10,7 +10,7 @@
 	Willkommen bei <b>Crazy Pool</b>, dem lustigen Vektorenspiel!
 	Das Spielfeld besteht aus einem grauen Gitter, auf dem sich mehrere Kreise finden lassen.
 </p>
-<h2>Spielelement</h2>
+<h2>Spielelemente</h2>
 <ul>
 	<li>
 		<h3>Die Spielkugel</h3>
@@ -29,7 +29,7 @@
 	<li>
 		<h3>Der Treffpunkt</h3>
 		<p>
-			Sobald du auf "konfirmieren" drückst, rollen beide Kugeln auf den Treffpunkt zu - das ist der kleine schwarze Kreis!
+			Sobald du die "Enter"-Taste auf der Tastatur drückst, rollen beide Kugeln auf den Treffpunkt zu - das ist der kleine schwarze Kreis!
 		</p>
 	</li>
 	<li>
@@ -41,14 +41,17 @@
 </ul>
 <h2>Die Regeln</h2>
 <p>
-	Sobald auf der "Konfirmieren"-Button betätigt wird, rollen beide Kugeln auf den Treffpunkt zu, bis sie kollidieren. Danach vereinen sie sich und rollen weiter. Wie sieht der weitere Pfad aus? Ignorieren wir vor erst die Spielekugel. Der Pfad zwischen der Kugel die nicht die Spielekugel ist und dem Treffpunkt kann als <b>Vektor</b> beschrieben werden. Wenn der Treffpunkt drei Kästen rechts und zwei Kästen über der Kugel platziert ist, dann ist der Vektor (3|2). Wäre er unter der Kugel, wäre es (3|-2), und so weiter. Wenn du jetzt die Simulation startest, bewegt sich die Kugel zum Treffpunkt, und von dort aus dann noch einmal den ursprünglichen Vektor, also nochmal (3|2). Die Kugel kommt letztendlich drei Kästen rechts und zwei Kästen über dem Treffpunkt an.
+	Sobald die "Enter"-Taste auf der Tastatur betätigt wird, rollen beide Kugeln auf den Treffpunkt zu, bis sie kollidieren. Danach vereinen sie sich und rollen weiter. Wie sieht der weitere Pfad aus? Ignorieren wir vor erst die Spielekugel. Der Pfad zwischen der Kugel die nicht die Spielekugel ist und dem Treffpunkt kann als <b>Vektor</b> beschrieben werden. Wenn der Treffpunkt drei Kästen rechts und zwei Kästen über der Kugel platziert ist, dann ist der Vektor (3|2). Wäre er unter der Kugel, wäre es (3|-2), und so weiter. Wenn du jetzt die Simulation startest, bewegt sich die Kugel zum Treffpunkt, und von dort aus dann noch einmal den ursprünglichen Vektor, also nochmal (3|2). Die Kugel kommt letztendlich drei Kästen rechts und zwei Kästen über dem Treffpunkt an.
 </p>
 <p>
 	Wie sieht es dann mit zwei Kugeln aus? Ganz einfach, <b>die Vektoren werden addiert</b>. Heißt, der Vektor der Spielkugel, addiert mit dem Vektor der anderen, ergibt den Vektor der vereinten Kugel vom Treffpunkt aus. Wie addiert man zwei Vektoren? Es ist sehr simpel: (a|b) + (x|y) = (a+x|b+y). Ein Beispiel: (3|2) + (-1|3) = (2|5).
 </p>
 <p>
-	<b>Ziel des Spiels</b> ist es, die Kugel genau auf den Zielpunkt zu bekommen. Du musst also die Spielkugel so verschieben, dass ihr Vektor, addiert mit dem Vektor der anderen Kugel, jenen Vektor ergibt, der vom Treffpunkt aus zum Zielpunkt führt. Noch nicht ganz verstanden? Kein Problem, spiel das Spiel einfach ein paar mal, du wirst es innerhalb von ein paar Runden raus haben. Viel Spaß!
+	<b>Ziel des Spiels</b> ist es, die Kugel genau auf den Zielpunkt zu bekommen. Du musst also die Spielkugel so verschieben, dass ihr Vektor, addiert mit dem Vektor der anderen Kugel, jenen Vektor ergibt, der vom Treffpunkt aus zum Zielpunkt führt. Noch nicht ganz verstanden? Kein Problem, spiel das Spiel einfach ein paar mal, du wirst es innerhalb von ein paar Runden raus haben.
 </p>
+<h2>Zusammenfassung</h2>
+<p>Diese Grafik erklärt das Spielprinzip genauer und enthält auch ein durchgerechnetes Beispiel. Viel Spaß! </p>
+<img src="manual.png">
 
 </body>
 </html>
