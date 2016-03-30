@@ -97,6 +97,8 @@
 			 	if(kids.length === 0){
 					if(errors==0){
 						$('#erer').html("Du hast "+ errors +" Fehler gemacht!");
+                        var cur = window.localStorage.getItem('CurPoints');
+                        window.localStorage.setItem('CurPoints', parseInt(cur) + 1);
 			 			$('#erg').html(bew[errors]);
 			 			$('#wr').html("");
 			 			$('#myModal').modal({});

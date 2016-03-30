@@ -13,10 +13,17 @@
 	background-color: #f0f0f0;
 }
 
+.rowt{
+	display: flex;
+	margin-bottom: 15px;
+	background-color: #fff;
+}
+
 .imagebox{
 	display: flex;
 	flex-grow: 1;
 	align-items: center;
+	min-width: 200px;
 }
 
 .textbox{
@@ -41,4 +48,7 @@
 .third{
 	width: 33.33%;
 	margin: 0px auto;
+}
+.trophy{
+	width: 220px;
 }

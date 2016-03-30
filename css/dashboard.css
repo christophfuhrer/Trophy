@@ -48,6 +48,10 @@ li a:hover {
 	flex-direction: column-reverse;
 	align-items: center;
 	justify-content: center;
+    background-image: url("../images/turm.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 #right{
 	width: 80%;
@@ -63,3 +67,13 @@ li a:hover {
 #content_training{display: none;}
 
 #content_trophies{display: none;}
+
+#rectpartie{
+    position:relative;
+    top: 300px;
+    z-index: -1;
+    height:100px;
+    width: 100%;
+    background-color: lightgreen;
+    transition: 2s ease-in-out;
+}
