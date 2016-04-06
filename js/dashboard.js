@@ -83,7 +83,7 @@ var acquired_points = parseInt(getPoints());
       pro_text = mathe_json.mathematiker[i].prolog_text;
       req_points = mathe_json.mathematiker[i].required_points;
 
-      boxTemplate = '<div class="row" style="opacity:0.6;"><div class="box imagebox"><img src="' + path + '" class="mathematic"/></div><div class="box textbox"><div><h1>' + name + '</h1><p>' + epi_text + '</p></div></div></div>';
+      boxTemplate = '<div class="row"><div class="box imagebox" style="background-image: url(images/Cross_Maths.png); background-size:100%; background-position: 27px; background-repeat: no-repeat;"><img src="' + path + '" class="mathematic" style="opacity:0.4"/></div><div class="box textbox"><div><h1>' + name + '</h1><p>' + epi_text + '</p></div></div></div>';
       boxTemplateEnemy = '<div class="row"><div class="box imagebox"><img src="' + path + '" class="mathematic"/></div><div class="box textbox"><div><h1>' + name + '</h1><h3>Benötigte Punkte: ' + req_points + '</h3><p>' + pro_text + '</p></div></div></div>'
 
       if(acquired_points > req_points){
