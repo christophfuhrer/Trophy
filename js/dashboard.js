@@ -157,7 +157,7 @@ var acquired_points = 23;
   }
 
   function outputTrophies(points){
-    var links = ["./images/trophies/gauss_trophy.svg", "./images/trophies/leibniz_trophy.svg", "./images/trophies/pythagoras_trophy.svg", "./images/trophies/qmark.png", "./images/trophies/qmark.png", "./images/trophies/qmark.png"];
+    var links = ["./images/trophies/pythagoras_trophy.svg", "./images/trophies/gauss_trophy.svg", "./images/trophies/leibniz_trophy.svg",  "./images/trophies/fibonacci_trophy.svg", "./images/trophies/euler_trophy.svg", "./images/trophies/newton_trophy.svg"];
     for (var i = 0; i < Math.floor(points/5); i++) {
       var x = document.getElementsByClassName("trophy");
       x[i].src = links[i];
@@ -169,7 +169,7 @@ var acquired_points = 23;
     el.setAttribute("style", "height:" + height * cp + "px ; top:" + (600 - height * cp) + "px");
 
   }
-  setPoints(11);
+  setPoints(30);
   getPointsInt(2000);
   /* 
   /   Tower wachsen lassen.
