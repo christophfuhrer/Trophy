@@ -28,6 +28,22 @@ body{
     border-right: 1px solid #aaa;
 }
 
+#points{
+    float: right;
+}
+
+#points a{
+    border: none;
+    padding: 20px 3rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#points a:hover{
+    background-color: #1F3A93;
+}
+
 .navbar-list li a img {
     margin-right: 0.5rem;
 }
