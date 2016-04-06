@@ -68,6 +68,7 @@ window.onload = function() {
 };
 
 var acquired_points = parseInt(getPoints());
+document.getElementById('current_points').innerHTML = acquired_points;
 
   function loadMaths(){
     var path = '';
@@ -153,6 +154,7 @@ var acquired_points = parseInt(getPoints());
       var cur = window.localStorage.getItem('CurPoints');
       var a = document.getElementById("points");
       outputTrophies(cur);
+      document.getElementById('current_points').innerHTML = cur;
       ueberpruefen(cur);
     }, inter);
   }

@@ -34,10 +34,10 @@ body{
 
 #points a{
     border: none;
-    padding: 20px 3rem;
+    padding: 22px 3rem;
     display: flex;
     align-items: center;
-    cursor: pointer;
+    cursor: default;
 }
 
 #points a:hover{
