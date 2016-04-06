@@ -19,12 +19,17 @@ body{
 }
 
 .navbar-list li a {
-    display: block;
+    display: flex;
+    align-items: center;
     color: #fff;
     text-align: center;
     padding: 15px 3rem;
     text-decoration: none;
     border-right: 1px solid #aaa;
+}
+
+.navbar-list li a img {
+    margin-right: 0.5rem;
 }
 
 li a:hover {
