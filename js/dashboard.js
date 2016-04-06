@@ -36,7 +36,7 @@ window.onload = function() {
     'trophy': 'images/trophies/fibonacci_trophy.svg',
     'credit_bild':'Von Hans-Peter Postel - Eigenes Werk, CC BY 2.5, https://commons.wikimedia.org/w/index.php?curid=1739679',
     'prolog_text': 'Grüße, Suchender! Mein Name ist Leonardo da Pisa, oder auch Fibonacci, wie mich die Untertanen nennen! Noch heute kann man meine Statue im Campo Santo in Pisa begutachter! Im Jahre 1202 erfand ich die Fibonacci-Folge, um das exponentielle Wachstum von Kaninchen den Niederbemittelten darzustellen. Diese Erfindung war so genial, dass noch heute in eurem "Mathematik"-Unterricht versucht wird, sie zu ergründer! Ich nehme jede Herausforderung an, in der Hoffnung, dass einer von euch mich übertrumpfen kann. Jedoch habe ich wenig Glauben daran, ein solche Vorkommnis noch zu erleben.',
-    'epilog_text': 'Ich ziehe meine Kapuze vor euch, ehrenwerter Mathematiker und Philosoph. Ihr habt meine Leidenschaft für die Mathematik wieder erweckt und meine Hoffnungen für die Zukunft neu entfacht.er! Gesinnt euch wohl!',
+    'epilog_text': 'Ich ziehe meine Kapuze vor euch, ehrenwerter Mathematiker und Philosoph. Ihr habt meine Leidenschaft für die Mathematik wieder erweckt und meine Hoffnungen für die Zukunft neu entfacht! Gesinnt euch wohl!',
   },
   {
     'name':'Leonard Euler',
@@ -67,14 +67,15 @@ window.onload = function() {
 ]
 };
 
-var acquired_points = 23;
+var acquired_points = parseInt(getPoints());
+document.getElementById('current_points').innerHTML = acquired_points;
 
   function loadMaths(){
     var path = '';
     var name = '';
     var text = '';
     var boxTemplate = '';
-    
+    document.getElementById('content_tower').innerHTML = "";
 
     for(var i = mathe_json.mathematiker.length - 1; i >= 0; i--){
       path = mathe_json.mathematiker[i].bild;
@@ -84,7 +85,7 @@ var acquired_points = 23;
       req_points = mathe_json.mathematiker[i].required_points;
 
       boxTemplate = '<div class="row" style="opacity:0.6;"><div class="box imagebox"><img src="' + path + '" class="mathematic"/></div><div class="box textbox"><div><h1>' + name + '</h1><p>' + epi_text + '</p></div></div></div>';
-      boxTemplateEnemy = '<div class="row"><div class="box imagebox"><img src="' + path + '" class="mathematic"/></div><div class="box textbox"><div><h1>' + name + '</h1><h3>Required points: ' + req_points + '</h3><p>' + pro_text + '</p></div></div></div>'
+      boxTemplateEnemy = '<div class="row"><div class="box imagebox"><img src="' + path + '" class="mathematic"/></div><div class="box textbox"><div><h1>' + name + '</h1><h3>Benötigte Punkte: ' + req_points + '</h3><p>' + pro_text + '</p></div></div></div>'
 
       if(acquired_points > req_points){
         document.getElementById('content_tower').innerHTML += boxTemplate;
@@ -144,7 +145,8 @@ var acquired_points = 23;
 
   function getPoints(){
     var cur = window.localStorage.getItem('CurPoints');
-    alert("Neuer Durchgang");
+    return cur;
+    //alert("Neuer Durchgang");
   }
 
   function getPointsInt(inter){
@@ -152,6 +154,7 @@ var acquired_points = 23;
       var cur = window.localStorage.getItem('CurPoints');
       var a = document.getElementById("points");
       outputTrophies(cur);
+      document.getElementById('current_points').innerHTML = cur;
       ueberpruefen(cur);
     }, inter);
   }
