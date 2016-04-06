@@ -152,14 +152,14 @@ var acquired_points = parseInt(getPoints());
     setInterval(function(){ 
       var cur = window.localStorage.getItem('CurPoints');
       var a = document.getElementById("points");
-      outputTrophies(1);
+      outputTrophies(cur);
       ueberpruefen(cur);
     }, inter);
   }
 
   function outputTrophies(points){
     var links = ["./images/trophies/gauss_trophy.svg", "./images/trophies/leibniz_trophy.svg", "./images/trophies/pythagoras_trophy.svg", "./images/trophies/qmark.png", "./images/trophies/qmark.png", "./images/trophies/qmark.png"];
-    for (var i = 0; i < points; i++) {
+    for (var i = 0; i < Math.floor(points/5); i++) {
       var x = document.getElementsByClassName("trophy");
       x[i].src = links[i];
     }
@@ -170,11 +170,8 @@ var acquired_points = parseInt(getPoints());
     el.setAttribute("style", "height:" + height * cp + "px ; top:" + (600 - height * cp) + "px");
 
   }
-
+  setPoints(11);
   getPointsInt(2000);
-
-
-
   /* 
   /   Tower wachsen lassen.
   */
