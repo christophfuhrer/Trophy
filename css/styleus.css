@@ -68,7 +68,6 @@ li a:hover {
 	display: flex;
 	flex-direction: column-reverse;
 	align-items: center;
-	justify-content: center;
     background-image: url("../images/turm.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -91,12 +90,10 @@ li a:hover {
 
 #rectpartie{
     position:relative;
-    top: 300px;
     z-index: -1;
-    height:100px;
-    width: 100%;
     background-color: lightgreen;
-    transition: 2s ease-in-out;
+    transition: 1s ease-in-out;
+    margin-bottom: 0px;
 }
 
 .box{

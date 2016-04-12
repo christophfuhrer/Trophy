@@ -69,6 +69,7 @@ window.onload = function() {
 
 var acquired_points = parseInt(getPoints());
 document.getElementById('current_points').innerHTML = acquired_points;
+var maxPoints = 35;
 
   function loadMaths(){
     var path = '';
@@ -167,16 +168,28 @@ document.getElementById('current_points').innerHTML = acquired_points;
   }
 
   function ueberpruefen(cp) {
-    el.setAttribute("style", "height:" + height * cp + "px ; top:" + (600 - height * cp) + "px");
+    var el = document.getElementById("rectpartie");
 
+    var towerStyles = window.getComputedStyle(document.getElementById("left"));
+    var towerHeight = towerStyles.height.replace("//\D*$/g", "");
+    towerHeight = parseFloat(towerHeight);
+
+    var towerBgImage = towerStyles.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2').split(',')[0];
+
+    var image = new Image();
+    image.src = towerBgImage;
+
+    var towerBgHeight = image.height;
+    var towerBgWidth = image.width;
+
+    var currentTowerWidth = ((towerHeight / towerBgHeight) * towerBgWidth) -1;
+    var proportion = (towerHeight / maxPoints) * cp;
+
+    el.style.width = currentTowerWidth.toString() + "px";
+    el.style.height = proportion.toString() + "px";
   }
-  setPoints(30);
-  getPointsInt(2000);
-  /* 
-  /   Tower wachsen lassen.
-  */
-  el = document.getElementById("rectpartie");
-  height = el.clientHeight;
 
+  setPoints(12);
+  getPointsInt(2000);
 
 };
