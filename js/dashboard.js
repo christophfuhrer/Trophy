@@ -95,7 +95,6 @@ window.onload = function() {
 
       boxTemplate = '<div class="row"><div class="box imagebox" style="background-image: url(images/Cross_Maths.png); background-size:100%; background-position: 27px; background-repeat: no-repeat;"><img src="' + path + '" class="mathematic" style="opacity:0.4"/></div><div class="box textbox"><div><h1>' + name + '</h1><p>' + epi_text + '</p></div></div></div>';
       boxTemplateEnemy = '<div class="row"><div class="box imagebox"><img src="' + path + '" class="mathematic"/></div><div class="box textbox"><div><h1>' + name + '</h1><h3>Ben&ouml;tigte Punkte: ' + req_points + '</h3><p>' + pro_text + '</p></div></div></div>'
-
       if(acquired_points > req_points){
         document.getElementById('content_tower').innerHTML += boxTemplate;
       } else if(req_points - 5 <  acquired_points) {
@@ -125,7 +124,7 @@ window.onload = function() {
   	for (var i = 0; i < allContent.length; i++) {
   		allContent[i].style.display = "none";
   	}
-
+    loadMaths();
   	document.getElementById(x).style.display = "block";
   }
 
@@ -164,6 +163,7 @@ window.onload = function() {
       var a = document.getElementById("points");
       outputTrophies(cur);
       document.getElementById('current_points').innerHTML = cur;
+      acquired_points = cur;
       ueberpruefen(cur);
     }, inter);
   }
