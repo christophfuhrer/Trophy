@@ -92,8 +92,9 @@ li a:hover {
     position:relative;
     z-index: -1;
     background-color: lightgreen;
-    transition: 1s ease-in-out;
+    transition: 2s ease-in-out;
     margin-bottom: 0px;
+    height: 0px;
 }
 
 .box{
