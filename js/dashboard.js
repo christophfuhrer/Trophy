@@ -67,7 +67,7 @@ window.onload = function() {
 ]
 };
 
-  var acquired_points = parseInt(getPoints());
+  var acquired_points = parseInt(getPoints()) || 0;
   document.getElementById('current_points').innerHTML = acquired_points;
   var maxPoints = 35;
 
@@ -86,21 +86,22 @@ window.onload = function() {
     var text = '';
     var boxTemplate = '';
     document.getElementById('content_tower').innerHTML = "";
-
     for(var i = mathe_json.mathematiker.length - 1; i >= 0; i--){
       path = mathe_json.mathematiker[i].bild;
       name = mathe_json.mathematiker[i].name;
       epi_text = mathe_json.mathematiker[i].epilog_text;
       pro_text = mathe_json.mathematiker[i].prolog_text;
-      req_points = mathe_json.mathematiker[i].required_points;
+      req_points = parseInt(mathe_json.mathematiker[i].required_points);
 
       boxTemplate = '<div class="row"><div class="box imagebox" style="background-image: url(images/Cross_Maths.png); background-size:100%; background-position: 27px; background-repeat: no-repeat;"><img src="' + path + '" class="mathematic" style="opacity:0.4"/></div><div class="box textbox"><div><h1>' + name + '</h1><p>' + epi_text + '</p></div></div></div>';
       boxTemplateEnemy = '<div class="row"><div class="box imagebox"><img src="' + path + '" class="mathematic"/></div><div class="box textbox"><div><h1>' + name + '</h1><h3>Ben&ouml;tigte Punkte: ' + req_points + '</h3><p>' + pro_text + '</p></div></div></div>'
 
       if(acquired_points > req_points){
         document.getElementById('content_tower').innerHTML += boxTemplate;
-      } else if(req_points - 5 <=  acquired_points) {
-         document.getElementById('content_tower').innerHTML += boxTemplateEnemy;
+      } else if(req_points - 5 <  acquired_points) {
+        document.getElementById('content_tower').innerHTML += boxTemplateEnemy;
+      } else if(name === "Pythagoras von Samos"){
+        document.getElementById('content_tower').innerHTML += boxTemplateEnemy;
       }
 
     }
@@ -191,7 +192,7 @@ window.onload = function() {
     var towerBgHeight = image.height;
     var towerBgWidth = image.width;
 
-    var currentTowerWidth = ((towerHeight / towerBgHeight) * towerBgWidth) - 1;
+    var currentTowerWidth = ((towerHeight / towerBgHeight) * towerBgWidth) - 5;
     var proportion = (towerHeight / maxPoints) * cp;
 
     el.style.width = currentTowerWidth.toString() + "px";
@@ -212,7 +213,7 @@ window.onload = function() {
     });
   }
 
-  setPoints(20);
+  setPoints(10);
   getPointsInt(2000);
 
 };
