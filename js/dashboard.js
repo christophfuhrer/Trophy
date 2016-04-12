@@ -144,9 +144,7 @@ document.getElementById('current_points').innerHTML = acquired_points;
   }
 
   function getPoints(){
-    var cur = window.localStorage.getItem('CurPoints');
-    return cur;
-    //alert("Neuer Durchgang");
+    return window.localStorage.getItem('CurPoints');
   }
 
   function getPointsInt(inter){

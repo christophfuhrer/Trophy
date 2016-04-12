@@ -12,6 +12,7 @@ function getPointsInt(inter){
 	setInterval(function(){ 
 		var cur = window.localStorage.getItem('CurPoints');
 		var a = document.getElementById("points");
+		document.getElementById('current_points').innerHTML = cur;
 		console.log("Aktuelle Punkte: " + cur);
 		outputTrophies(cur);
 	}, inter);
