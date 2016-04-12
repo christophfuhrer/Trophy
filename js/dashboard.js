@@ -67,9 +67,18 @@ window.onload = function() {
 ]
 };
 
-var acquired_points = parseInt(getPoints());
-document.getElementById('current_points').innerHTML = acquired_points;
-var maxPoints = 35;
+  var acquired_points = parseInt(getPoints());
+  document.getElementById('current_points').innerHTML = acquired_points;
+  var maxPoints = 35;
+
+  var tag = document.createElement('script');
+
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  var playerVid1;
+  var playerVid2;
 
   function loadMaths(){
     var path = '';
@@ -90,7 +99,7 @@ var maxPoints = 35;
 
       if(acquired_points > req_points){
         document.getElementById('content_tower').innerHTML += boxTemplate;
-      } else if(req_points -5 <=  acquired_points) {
+      } else if(req_points - 5 <=  acquired_points) {
          document.getElementById('content_tower').innerHTML += boxTemplateEnemy;
       }
 
@@ -182,14 +191,28 @@ var maxPoints = 35;
     var towerBgHeight = image.height;
     var towerBgWidth = image.width;
 
-    var currentTowerWidth = ((towerHeight / towerBgHeight) * towerBgWidth) -1;
+    var currentTowerWidth = ((towerHeight / towerBgHeight) * towerBgWidth) - 1;
     var proportion = (towerHeight / maxPoints) * cp;
 
     el.style.width = currentTowerWidth.toString() + "px";
     el.style.height = proportion.toString() + "px";
   }
 
-  setPoints(12);
+  function onYouTubeIframeAPIReady() {
+    playerVid1 = new YT.Player('vid1', {
+      height: '315',
+      width: '560',
+      videoId: 'lDPHdcuu9Ps'
+    });
+
+    playerVid2 = new YT.Player('vid2', {
+      height: '315',
+      width: '560',
+      videoId: 'fwnAmaZyiDo'
+    });
+  }
+
+  setPoints(20);
   getPointsInt(2000);
 
 };
