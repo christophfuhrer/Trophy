@@ -91,33 +91,37 @@ function start(){
         var landing_plattform = getAsset('plattform');
         if(parachuter.x < 1000){
             parachuter.x += vector_times.time_x + delta_movement_x + wind_strength;
+        }else{
+            end('Verloren!');
         }
         
         if(parachuter.y <= (landing_plattform.y - landing_plattform.height) || (parachuter.x < landing_plattform.x || parachuter.x >                 (landing_plattform.height + landing_plattform.x))){
             parachuter.y += vector_times.time_y + delta_movement_y;
         }
-        
-        
-        if((parachuter.y + parachuter.height) > (landing_plattform.y)){
+
+        if((parachuter.y + parachuter.height) >= (landing_plattform.y)){
             if(parachuter.x > landing_plattform.x && parachuter.x < (landing_plattform.x + landing_plattform.width)){
-                console.log('Gewonnen');
-                createjs.Ticker.removeEventListener('tick', moveParachuter);
-                createjs.Ticker.removeEventListener('tick', checkCollision);
-                window.removeEventListener('keydown', movementParachuter);
-                
-                
+                end('Gewonnnen!');
+                window.localStorage.setItem('CurPoints', parseInt(cur) + 1);
             }else{
-                console.log('Verloren');
-                createjs.Ticker.removeEventListener('tick', moveParachuter);
-                createjs.Ticker.removeEventListener('tick', checkCollision);
-                window.removeEventListener('keydown', movementParachuter);
-                
-                stage.clear();
+                end('Verloren!');
             }
         }
+
         
         
     }
+
+    function end(statement){
+        createjs.Ticker.removeEventListener('tick', moveParachuter);
+        createjs.Ticker.removeEventListener('tick', checkCollision);
+        window.removeEventListener('keydown', movementParachuter);
+        var txt_end = new createjs.Text(statement, "70px Arial", "#000000");
+        txt_end.x = 400;
+        txt_end.y = 280;
+        stage.addChild(txt_end);
+    }
+
     
     function checkMovement(mvmt, mvmt_number){
         if(mvmt_number > 0){
@@ -138,7 +142,7 @@ function start(){
     function movementParachuter(e){
         switch(e.keyCode){
             case 37:
-                delta_movement_x = checkMovement(delta_movement_x, -0.1);
+                delta_movement_x = checkMovement(delta_movement_x, -0.2);
             break;
             case 38:
                 delta_movement_y = checkMovement(delta_movement_y, -0.1);
@@ -160,7 +164,7 @@ function start(){
     
     function loadSound(){
         createjs.Sound.registerSound('../assets/coin-sound.mp3', 'coin_sound');
-        createjs.Sound.volume = 0.5;
+        createjs.Sound.volume = 0.2;
     }
     
     function playSound(soundId){
@@ -173,28 +177,24 @@ function start(){
     
     function generateWind(){
         return calculateVector(
-            Math.floor(getRandomArbitrary(1,10))
+            Math.floor(getRandomArbitrary(1,5))
         );
     }
     
     function moveObjects(){
         for(var i = 0; i < assets.length; i++){
             var current_asset = assets[i];
-            var time = getRandomArbitrary(10000,20000);
+            var time = (1000 / wind_strength) * 25;
             var start_point = current_asset.x;
-            var end_point = Math.random() > 0.5 ? 800 : 0;
-            if(current_asset.asset_id !== 'plattform' && current_asset.asset_id !== 'burnt_parachuter' && current_asset.asset_id !==                'plane'){
-                createjs.Tween.get(current_asset, {loop: true})
-                .to({x: end_point}, 
-                    time, 
-                    createjs.Ease.getPowInOut(2))
-                .to({x: start_point},
-                   time,
-                   createjs.Ease.getPowInOut(2));
+            var end_point = 1500; //(start_point + wind *)
+            if(current_asset.asset_id !== 'plattform' && current_asset.asset_id !== 'burnt_parachuter' && current_asset.asset_id !== 'plane'){
+                createjs.Tween.get(current_asset)
+                .to({x: end_point},
+                   time);
             }else if(current_asset.asset_id === 'plane'){
                 createjs.Tween.get(current_asset)
                 .to({x: (1000 + current_asset.width)},
-                   time);
+                   15000);
             }
 
             
@@ -214,6 +214,7 @@ function start(){
                         createjs.Ticker.removeEventListener('tick', moveParachuter);
                         createjs.Ticker.removeEventListener('tick', checkCollision);
                         window.removeEventListener('keydown', movementParachuter);
+                        end('Verloren');
                     break;
                     case 'coin':
                         assets[i].visible = false;
@@ -221,9 +222,6 @@ function start(){
                         score++;
                         playSound('coin_sound');
                     break;
-                    default:
-                        
-                    break;    
                 }
 
             }
@@ -233,23 +231,68 @@ function start(){
     function placeAssets(placed_assets){
         for(var i = 0; i < placed_assets.length; i++){
             var current_asset = placed_assets[i];
-            var start_x = getRandomArbitrary(100 , 900);
+            var start_x = getRandomArbitrary(-600 , 600);
             var start_y = getRandomArbitrary(100, 400);
             drawAsset(start_x, start_y, current_asset.scale_x, current_asset.scale_y, current_asset.asset_id);
         }
     }
     
-    
+    function onClickStartButton(){
+        var xPara = parseInt(document.getElementById('xParachute').value);
+        var yPara = parseInt(document.getElementById('xParachute').value);
+
+        if(isNaN(xPara)){
+            alert('x ist keine Zahl');
+            return false;
+        } else if(xPara > 0){
+            alert('x ist zu klein');
+            return false;
+        } else if(xPara < 100){
+            alert('x ist zu groß');
+            return false;
+        }
+
+        if(isNaN(yPara)){
+            alert('y ist keine Zahl');
+            return false;
+        } else if(yPara > 0){
+            alert('y ist zu klein');
+            return false;
+        } else if(yPara < 100){
+            alert('y ist zu groß');
+            return false;
+        }
+
+        document.getElementById('start').disabled = true;
+        drawParachuter(20,20,0.2,0.2);
+        moveObjects();
+
+        movement_x = xPara;  // 3.5
+        movement_y = yPara; // 2
+        moveParachuter();
+        
+        createjs.Ticker.setFPS(60);
+        createjs.Ticker.addEventListener('tick', stage);
+        createjs.Ticker.addEventListener('tick', moveParachuter);
+        createjs.Ticker.addEventListener('tick', checkCollision);
+        window.addEventListener('keydown', movementParachuter);
+    }
+
+    function restartGame(){
+        document.getElementById('start').disabled = false;
+        location.reload();
+    }
+
     /*
     * Initialisierungsfunktion des Spiels
     */
     function init(){
         stage = new createjs.Stage(document.getElementById('canvas'));
         wind_strength = generateWind().time_x;
+        document.getElementById('windStrength').innerHTML = Math.floor(wind_strength / 0.1);
+        document.getElementById('start').addEventListener('click', onClickStartButton);
         drawAsset(700,540,0.3,0.3,'plattform');
         drawAsset(-235,-60,0.3,0.3,'plane');
-        drawParachuter(20,20,0.2,0.2);
-        
         placeAssets([
             {
                 asset_id: 'cloud_1',
@@ -260,6 +303,52 @@ function start(){
                 asset_id: 'cloud_2',
                 scale_x: getRandomArbitrary(0.3, 0.4),
                 scale_y: getRandomArbitrary(0.3, 0.4)
+            },
+            {
+                asset_id: 'cloud_1',
+                scale_x: getRandomArbitrary(0.3, 0.4),
+                scale_y: getRandomArbitrary(0.3, 0.4)
+            },
+            {
+                asset_id: 'cloud_2',
+                scale_x: getRandomArbitrary(0.3, 0.4),
+                scale_y: getRandomArbitrary(0.3, 0.4)
+            },
+            {
+                asset_id: 'cloud_1',
+                scale_x: getRandomArbitrary(0.3, 0.4),
+                scale_y: getRandomArbitrary(0.3, 0.4)
+            },
+            {
+                asset_id: 'cloud_2',
+                scale_x: getRandomArbitrary(0.3, 0.4),
+                scale_y: getRandomArbitrary(0.3, 0.4)
+            },
+            {
+                asset_id: 'cloud_1',
+                scale_x: getRandomArbitrary(0.3, 0.4),
+                scale_y: getRandomArbitrary(0.3, 0.4)
+            },
+            {
+                asset_id: 'cloud_2',
+                scale_x: getRandomArbitrary(0.3, 0.4),
+                scale_y: getRandomArbitrary(0.3, 0.4)
+            },
+            {
+                asset_id: 'cloud_1',
+                scale_x: getRandomArbitrary(0.3, 0.4),
+                scale_y: getRandomArbitrary(0.3, 0.4)
+            },
+            {
+                asset_id: 'cloud_2',
+                scale_x: getRandomArbitrary(0.3, 0.4),
+                scale_y: getRandomArbitrary(0.3, 0.4)
+            },
+            {
+                asset_id: 'thunder_cloud',
+                scale: 0.3,
+                scale_x: 0.25,
+                scale_y: 0.25
             },
             {
                 asset_id: 'thunder_cloud',
@@ -289,18 +378,7 @@ function start(){
             },
             
         ]);
-        
-        moveObjects();
-        
-        movement_x = 2;
-        movement_y = 2;
-        moveParachuter();
-        
-        createjs.Ticker.setFPS(60);
-        createjs.Ticker.addEventListener('tick', stage);
-        createjs.Ticker.addEventListener('tick', moveParachuter);
-        createjs.Ticker.addEventListener('tick', checkCollision);
-        window.addEventListener('keydown', movementParachuter);
+        document.getElementById('restart').addEventListener('click', restartGame);
     }	
     
     preload();

@@ -1,3 +1,9 @@
 #canvas{
     background-color: #009FE3;
 }
+
+p .vector-input {
+    width: 2em;
+    z-index: 10;
+    -moz-appearance: textfield;
+}
