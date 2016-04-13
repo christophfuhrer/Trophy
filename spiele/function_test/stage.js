@@ -45,11 +45,17 @@
 
 
     $("button.func").click(function(target){
+      $("button.func").attr("disabled", "disabled");
+      $("button.newfuncz").attr("disabled", "disabled");
+      
       console.log("button clicked: " , target.currentTarget.id);
-      tempfunc = new Mathfunction(target.currentTarget.id, 700, 500, 400, stage, skater);
+      tempfunc = new Mathfunction(target.currentTarget.id, 250, 300, 400, stage, skater);
     });
 
     $("button.clear").click(function(target){
+      $("button.func").attr("disabled", false);
+      $("button.newfuncz").attr("disabled", false);
+
       console.log("button clicked: " , target.currentTarget.id);
       skater.clear();
       tempfunc.die();
@@ -60,17 +66,27 @@
     });
 
     $("button.newfuncz").click(function(target){
+
+      $("button.func").attr("disabled", false);
       $(".func").remove();
       createButtons(stage);
       $("button.func").click(function(target){
-        tempfunc = new Mathfunction(target.currentTarget.id, 700, 500, 400, stage, skater);
+        tempfunc = new Mathfunction(target.currentTarget.id, 250, 300, 400, stage, skater);
       });
     });
 
-
+    function addHandlers(){
+	    $("button.func").click(function(target){
+	      $("button.func").attr("disabled", "disabled");
+	      $("button.newfuncz").attr("disabled", "disabled");
+	      
+	      console.log("button clicked: " , target.currentTarget.id);
+	      tempfunc = new Mathfunction(target.currentTarget.id, 250, 300, 400, stage, skater);
+        });
+    }
 
     function drawStage(){
-      drawLinePlusSkaterFrames(0,650,700,500,skater,stage);
+      drawLinePlusSkaterFrames(0,600,250,300,skater,stage);
 
 
     //var mfunction = new Mathfunction("8x2+2x1+3", 700, 500, 400, stage, skater);
@@ -90,9 +106,9 @@
     i = 0;
 
     buttonFunc = rand[0] + "x2+" + rand[1] + "x1+" + rand[2];
-    buttonFunc2 = rand[0] + "x<span class='super'>2</span> + " + rand[1] + "x + " + rand[2];
+    buttonFunc2 = "Random -x<span class='super'>2</span>-Funktion (" + rand[0] + ")";
 
-    $('.container').append('<button class="func btn btn-primary" id=' + buttonFunc + '>' + buttonFunc2 + '</button>');
+    $('.container-fluid').append('<button class="func btn btn-primary" id=' + buttonFunc + '>' + buttonFunc2 + '</button>');
 
     while(i<=3){
       rand[i] = Math.floor(Math.random() * 10) + 1;
@@ -102,21 +118,22 @@
     i = 0;
 
     buttonFunc = rand[0] + "x3+" + rand[1] + "x2+" + rand[2] + "x1+" + rand[3];
-    buttonFunc2 = rand[0] + "x<span class='super'>3</span> + " + rand[1] + "x<span class='super'>2</span> + " + rand[2] + "x + " + rand[3];
+    buttonFunc2 = "Random -x<span class='super'>3</span>-Funktion (" + rand[0] + ")";
 
-    $('.container').append('<button class="func btn btn-primary" id=' + buttonFunc + '>' + buttonFunc2 + '</button>');
+    $('.container-fluid').append('<button class="func btn btn-primary" id=' + buttonFunc + '>' + buttonFunc2 + '</button>');
 
     while(i<=4){
       rand[i] = Math.floor(Math.random() * 10) + 1;
       i++;
+
     }
 
     i = 0;
 
     buttonFunc = rand[0] + "x4+" + rand[1] + "x3+" + rand[2] + "x2+" + rand[3] + "x1+" + rand[4];
-    buttonFunc2 = rand[0] + "x<span class='super'>4</span> + " + rand[1] + "x<span class='super'>3</span> + " + rand[2] + "x<span class='super'>2</span> + " + rand[3] + "x + " + rand[4];
+    buttonFunc2 = "Random -x<span class='super'>4</span>-Funktion";
 
-    $('.container').append('<button class="func btn btn-primary" id=' + buttonFunc + '>' + buttonFunc2 + '</button>');
+    $('.container-fluid').append('<button class="func btn btn-primary" id=' + buttonFunc + '>' + buttonFunc2 + '</button>');
 
     while(i<=5){
       rand[i] = Math.floor(Math.random() * 10) + 1;
@@ -126,10 +143,10 @@
     i = 0;
 
     buttonFunc = rand[0] + "x5+" + rand[1] + "x4+" + rand[2] + "x3+" + rand[3] + "x2+" + rand[4] + "x1+" + rand[5];
-    buttonFunc2 = rand[0] + "x<span class='super'>5</span> + " + rand[1] + "x<span class='super'>4</span> + " + rand[2] + "x<span class='super'>3</span> + " + rand[3] + "x<span class='super'>2</span> + " + rand[4] + "x + " + rand[5];
+    buttonFunc2 = rand[0] + "Random -x<span class='super'>5</span>-Funktion (" + rand[0] + ")";;
 
-    $('.container').append('<button class="func btn btn-primary" id=' + buttonFunc + '>' + buttonFunc2 + '</button>');
-
+    $('.container-fluid').append('<button class="func btn btn-primary" id=' + buttonFunc + '>' + buttonFunc2 + '</button>');
+    addHandlers();
   }    
 
     function handleTick(event) {

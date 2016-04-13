@@ -30,7 +30,7 @@ bzw. man müsste die objekte iwi killen, da kann man markus fragen, der hat das 
     var  startpunktY = 0;
     var divider = 1000;
       if(terme[0].potenz == 2){
-        divider = 1000;
+        divider = 2000;
       }
       if(terme[0].potenz == 3){
         divider = 500000;
@@ -68,9 +68,9 @@ bzw. man müsste die objekte iwi killen, da kann man markus fragen, der hat das 
     //console.log(yArray);
     //console.log(xArray);
     stage.addChild(line);
-    line.graphics.lineTo(1800, 650);
+    line.graphics.lineTo(900, 600);
     line.graphics.endStroke();
-    drawLinePlusSkaterFrames(parseInt(xArray[399]), parseInt(yArray[399]), 1800, 650, skater, stage);
+    drawLinePlusSkaterFrames(parseInt(xArray[399]), parseInt(yArray[399]), 900, 600, skater, stage);
   }
 
 function drawLinePlusSkaterFrames(x1,y1,x2,y2,inSkater,inStage){
@@ -91,7 +91,7 @@ function drawLinePlusSkaterFrames(x1,y1,x2,y2,inSkater,inStage){
       var i = 2;
 
       while(true){
-        if(i%2 == 0){
+       if(i%2 == 0){
           inSkater.addFrame(x1,y1); 
        }
        i++;

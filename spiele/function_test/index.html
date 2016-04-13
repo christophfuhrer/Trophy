@@ -29,7 +29,7 @@
 
       #header{
         position:absolute;
-        left:780px;
+        left:310px;
         top:40px;
         font-size:26px;
         font-weight: bold;
@@ -45,6 +45,7 @@
         position: absolute;
         left:2.5%;
         top:10px;
+
     }
 
     .btn-success{
@@ -56,6 +57,10 @@
         padding: 5px 12px;
     }
 
+    .container-fluid {
+    	padding-left: 0px; 
+    }
+
 </style>
 </head>
 <body onload="Main()">
@@ -63,9 +68,9 @@
 
     <span id="header">FUNKTIONS-TEST</span>
     <figure id="fig1">
-        <canvas id="myCanvas" width="1800px" height="900px">
+        <canvas id="myCanvas" width="900px" height="600px">
         </canvas>
-        <div class="container text-center">
+        <div class="container-fluid text-center">
             <button class="clear btn btn-warning" id="clear">Clear Functions</button>
             <button class="newfuncz btn btn-success" id="newfuncz">New Functions</button>
         </div>
